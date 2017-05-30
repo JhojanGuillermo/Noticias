@@ -21,6 +21,6 @@ public class MainActivity extends AppCompatActivity {
         noticiasList.setLayoutManager(new LinearLayoutManager(this));
 
         List<Noticia> noticias = NoticiaRepository.getNoticias();
-        noticiasList.setAdapter(new NoticiasAdapter(noticias));
+        noticiasList.setAdapter(new NoticiasAdapter(this, noticias));
     }
 }

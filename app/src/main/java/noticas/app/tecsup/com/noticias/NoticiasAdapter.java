@@ -1,6 +1,8 @@
 package noticas.app.tecsup.com.noticias;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,14 +19,17 @@ import java.util.List;
 
 public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHolder> {
 
+    private Activity activity;
+
     private List<Noticia> noticias;
 
     public NoticiasAdapter(){
         this.noticias = new ArrayList<>();
     }
 
-    public NoticiasAdapter(List<Noticia> noticias){
+    public NoticiasAdapter(Activity activity, List<Noticia> noticias){
         this.noticias = noticias;
+        this.activity = activity;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -55,8 +60,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(NoticiasAdapter.ViewHolder viewHolder, int position) {
-        Noticia noticia = this.noticias.get(position);
+    public void onBindViewHolder(final NoticiasAdapter.ViewHolder viewHolder, int position) {
+        final Noticia noticia = this.noticias.get(position);
         viewHolder.tema.setText(noticia.getTema());
         viewHolder.titulo.setText(noticia.getTitulo());
         viewHolder.fecha.setText(noticia.getFecha());
@@ -66,6 +71,18 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         Context context = viewHolder.itemView.getContext();
         int idRes = context.getResources().getIdentifier(noticia.getPicture(), "drawable", context.getPackageName());
         viewHolder.picture.setImageResource(idRes);
+
+        //ver su respectivo detalle
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, NoticiaDetalleActivity.class);
+
+                    intent.putExtra("ID", noticia.getId());
+                    activity.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
