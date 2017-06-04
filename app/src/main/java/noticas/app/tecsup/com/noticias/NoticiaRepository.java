@@ -13,8 +13,8 @@ public class NoticiaRepository {
 
     static {
         noticias = new ArrayList<>();
-        noticias.add(new Noticia(1, "NACIMIENTO", "Tips para lograr una experiencia de compra diferencial.", "01/06/17", "8:50", "ABCSDSDSD", ""));
-        noticias.add(new Noticia(2, "NACIMIENTO", "Tips para lograr una experiencia de compra diferencial.", "01/06/17", "8:50", "ABCSDSDSD", ""));
+        noticias.add(new Noticia(1, "AUMENTO", "Merecido aumento de sueldo.", "01/06/17", "12:50", "ASDFASFA", "sueldo"));
+        noticias.add(new Noticia(2, "NACIMIENTO", "Tips para lograr una experiencia de compra diferencial.", "01/06/17", "8:50", "ABCSDSDSD", "nacimiento"));
 
     }
 

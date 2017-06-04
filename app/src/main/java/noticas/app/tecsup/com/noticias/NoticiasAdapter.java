@@ -78,7 +78,13 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(activity, NoticiaDetalleActivity.class);
 
-                    intent.putExtra("ID", noticia.getId());
+                    //intent.putExtra("ID", noticia.getId())
+                    intent.putExtra("TITULO", noticia.getTitulo())
+                            .putExtra("FECHA", noticia.getFecha())
+                            .putExtra("HORA", noticia.getHora())
+                            .putExtra("DETALLES", noticia.getDetalles())
+                            .putExtra("PICTURE", noticia.getPicture());
+
                     activity.startActivity(intent);
 
             }
