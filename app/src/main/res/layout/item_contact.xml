@@ -51,7 +51,8 @@
             android:text="Nombres del Evento"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="#007bff"/>
+            android:textColor="#007bff"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:id="@+id/fecha"
@@ -86,11 +87,9 @@
             android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/fecha"
-            android:layout_marginBottom="8dp"
             android:layout_toEndOf="@+id/picture_image"
-            android:text="Detalles..."
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:visibility="invisible"/>
 
 
     </RelativeLayout>
