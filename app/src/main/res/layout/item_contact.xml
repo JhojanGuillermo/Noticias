@@ -52,7 +52,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="#007bff"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="6dp"/>
 
         <TextView
             android:id="@+id/fecha"
