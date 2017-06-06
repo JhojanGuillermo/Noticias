@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,11 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         this.activity = activity;
     }
 
+    public void setProductos(List<Noticia> noticias) {
+        this.noticias = noticias;
+    }
+
+
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView picture;
@@ -48,7 +55,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
             titulo = (TextView) itemView.findViewById(R.id.titulo);
             fecha = (TextView) itemView.findViewById(R.id.fecha);
             hora = (TextView) itemView.findViewById(R.id.hora);
-            detalles = (TextView) itemView.findViewById(R.id.descripcion);
+            //detalles = (TextView) itemView.findViewById(R.id.descripcion);
         }
     }
 
@@ -66,11 +73,13 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         viewHolder.titulo.setText(noticia.getTitulo());
         viewHolder.fecha.setText(noticia.getFecha());
         viewHolder.hora.setText(noticia.getHora());
-        viewHolder.detalles.setText(noticia.getDetalles());
+        //viewHolder.detalles.setText(noticia.getDesc2());
 
         Context context = viewHolder.itemView.getContext();
-        int idRes = context.getResources().getIdentifier(noticia.getPicture(), "drawable", context.getPackageName());
-        viewHolder.picture.setImageResource(idRes);
+        //int idRes = context.getResources().getIdentifier(noticia.getImagen(), "drawable", context.getPackageName());
+        //viewHolder.picture.setImageResource(idRes);
+
+        Picasso.with(context).load("https://usuarios-api-martincs27.c9users.io/images/noticias/"+ noticia.getImagen()).into(viewHolder.picture);
 
         //ver su respectivo detalle
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +91,8 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
 //                    intent.putExtra("TITULO", noticia.getTitulo())
 //                            .putExtra("FECHA", noticia.getFecha())
 //                            .putExtra("HORA", noticia.getHora())
-//                            .putExtra("DETALLES", noticia.getDetalles())
-//                            .putExtra("PICTURE", noticia.getPicture());
+//                            .putExtra("DETALLES", noticia.getDesc2())
+//                            .putExtra("PICTURE", noticia.getImagen());
 
                     activity.startActivity(intent);
 

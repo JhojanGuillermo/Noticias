@@ -16,22 +16,22 @@ public class Noticia {
 
     private String hora;
 
-    private String detalles;
+    private String desc2;
 
-    private String picture;
+    private String imagen;
 
     public Noticia(int i, String nacimiento, String s, String s1, String s2, String abcsdsdsd){
 
     }
 
-    public Noticia(Integer id, String tema, String titulo, String fecha, String hora, String detalles, String picture) {
+    public Noticia(Integer id, String tema, String titulo, String fecha, String hora, String desc2, String imagen) {
         this.id = id;
         this.tema = tema;
         this.titulo = titulo;
         this.fecha = fecha;
         this.hora = hora;
-        this.detalles = detalles;
-        this.picture = picture;
+        this.desc2 = desc2;
+        this.imagen = imagen;
     }
 
     public Integer getId() {
@@ -74,20 +74,20 @@ public class Noticia {
         this.hora = hora;
     }
 
-    public String getDetalles() {
-        return detalles;
+    public String getDesc2() {
+        return desc2;
     }
 
-    public void setDetalles(String detalles) {
-        this.detalles = detalles;
+    public void setDesc2(String desc2) {
+        this.desc2 = desc2;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     @Override
@@ -98,8 +98,8 @@ public class Noticia {
                 ", titulo='" + titulo + '\'' +
                 ", fecha='" + fecha + '\'' +
                 ", hora='" + hora + '\'' +
-                ", detalles='" + detalles + '\'' +
-                ", picture='" + picture + '\'' +
+                ", desc2='" + desc2 + '\'' +
+                ", imagen='" + imagen + '\'' +
                 '}';
     }
 }
