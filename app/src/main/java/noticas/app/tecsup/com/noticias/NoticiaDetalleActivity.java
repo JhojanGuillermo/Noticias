@@ -26,27 +26,43 @@ public class NoticiaDetalleActivity extends AppCompatActivity {
 
         if (this.getIntent().getExtras() != null){
             Bundle bundle = this.getIntent().getExtras();
-            //id = bundle.getInt("ID");
-            titulo = bundle.getString("TITULO");
-            fecha = bundle.getString("FECHA");
-            hora = bundle.getString("HORA");
-            detalles = bundle.getString("DETALLES");
-            picture = bundle.getInt("PICTURE");
+            id = bundle.getInt("ID");
+//            titulo = bundle.getString("TITULO");
+//            fecha = bundle.getString("FECHA");
+//            hora = bundle.getString("HORA");
+//            detalles = bundle.getString("DETALLES");
+//            picture = bundle.getInt("PICTURE");
         }
 
         //llamara al servicio por ID o buscar en tu lista el objeto por ese ID
 
         //TextView textView = (TextView) findViewById(R.id.textview);
         //textView.setText("Noticia " + id);
+//        TextView tit = (TextView) findViewById(R.id.text_titulo);
+//        tit.setText(titulo);
+//        TextView fech = (TextView) findViewById(R.id.text_fecha);
+//        fech.setText(fecha);
+//        TextView hor = (TextView) findViewById(R.id.text_hora);
+//        hor.setText(hora);
+//        TextView det = (TextView) findViewById(R.id.text_descripcion);
+//        det.setText(detalles);
+//        ImageView img = (ImageView) findViewById(R.id.portada);
+//        img.setImageResource(picture);
+
+        Noticia noticia = NoticiaRepository.getNoticias(id);
+
         TextView tit = (TextView) findViewById(R.id.text_titulo);
-        tit.setText(titulo);
-        TextView fech = (TextView) findViewById(R.id.text_fecha);
-        fech.setText(fecha);
-        TextView hor = (TextView) findViewById(R.id.text_hora);
-        hor.setText(hora);
-        TextView det = (TextView) findViewById(R.id.text_descripcion);
-        det.setText(detalles);
+        tit.setText(noticia.getTitulo());
         ImageView img = (ImageView) findViewById(R.id.portada);
-        img.setImageResource(picture);
+        int idDrawable = this.getResources().getIdentifier(noticia.getPicture(), "drawable", this.getPackageName());
+        img.setImageResource(idDrawable);
+        TextView fech = (TextView) findViewById(R.id.text_fecha);
+        fech.setText(noticia.getFecha());
+        TextView hor = (TextView) findViewById(R.id.text_hora);
+        hor.setText(noticia.getHora());
+        TextView det = (TextView) findViewById(R.id.text_descripcion);
+        det.setText(noticia.getDetalles());
+
+
     }
 }

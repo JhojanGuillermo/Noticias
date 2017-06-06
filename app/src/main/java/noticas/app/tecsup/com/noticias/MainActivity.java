@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         noticiasList.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Noticia> noticias = NoticiaRepository.getNoticias();
+        List<Noticia> noticias = NoticiaRepository.listNoticias();
         noticiasList.setAdapter(new NoticiasAdapter(this, noticias));
     }
 }

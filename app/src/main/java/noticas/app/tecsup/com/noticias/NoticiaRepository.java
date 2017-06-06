@@ -18,7 +18,16 @@ public class NoticiaRepository {
 
     }
 
-    public static List<Noticia> getNoticias(){
+    public static List<Noticia> listNoticias(){
         return noticias;
+    }
+
+    public static Noticia getNoticias(int id) {
+        for (Noticia noticia : noticias ) {
+            if(noticia.getId() == id){
+                return noticia;
+            }
+        }
+        return null;
     }
 }
