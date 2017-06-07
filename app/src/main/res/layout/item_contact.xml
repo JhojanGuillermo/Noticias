@@ -55,42 +55,22 @@
             android:layout_marginBottom="6dp"/>
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clock"
+            android:layout_below="@+id/titulo"
+            android:layout_toEndOf="@+id/picture_image"/>
+
+        <TextView
             android:id="@+id/fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titulo"
             android:layout_toEndOf="@+id/picture_image"
+            android:layout_marginLeft="16dp"
             android:text="12/05/08"
-            android:textColor="#787874"
+            android:textColor="#ff3700"
             android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/separador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/titulo"
-            android:layout_toEndOf="@+id/fecha"
-            android:text=" | "
-            android:textSize="12dp"/>
-
-        <TextView
-            android:id="@+id/hora"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/titulo"
-            android:layout_toEndOf="@+id/separador"
-            android:text="12/05/08"
-            android:textColor="#787874"
-            android:textSize="12dp" />
-
-        <!--<TextView-->
-            <!--android:id="@+id/descripcion"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_toEndOf="@+id/picture_image"-->
-            <!--android:textSize="14dp"-->
-            <!--android:visibility="invisible"/>-->
-
 
     </RelativeLayout>
 

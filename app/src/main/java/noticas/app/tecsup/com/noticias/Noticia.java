@@ -14,8 +14,6 @@ public class Noticia {
 
     private String fecha;
 
-    private String hora;
-
     private String desc2;
 
     private String imagen;
@@ -24,12 +22,11 @@ public class Noticia {
 
     }
 
-    public Noticia(Integer id, String tema, String titulo, String fecha, String hora, String desc2, String imagen) {
+    public Noticia(Integer id, String tema, String titulo, String fecha, String desc2, String imagen) {
         this.id = id;
         this.tema = tema;
         this.titulo = titulo;
         this.fecha = fecha;
-        this.hora = hora;
         this.desc2 = desc2;
         this.imagen = imagen;
     }
@@ -66,14 +63,6 @@ public class Noticia {
         this.fecha = fecha;
     }
 
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
     public String getDesc2() {
         return desc2;
     }
@@ -97,7 +86,6 @@ public class Noticia {
                 ", tema='" + tema + '\'' +
                 ", titulo='" + titulo + '\'' +
                 ", fecha='" + fecha + '\'' +
-                ", hora='" + hora + '\'' +
                 ", desc2='" + desc2 + '\'' +
                 ", imagen='" + imagen + '\'' +
                 '}';

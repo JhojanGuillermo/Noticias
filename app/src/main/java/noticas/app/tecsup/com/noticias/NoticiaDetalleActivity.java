@@ -89,8 +89,6 @@ public class NoticiaDetalleActivity extends AppCompatActivity {
                         Picasso.with(NoticiaDetalleActivity.this).load("https://usuarios-api-martincs27.c9users.io/images/noticias/"+ noticia.getImagen()).into(img);
                         TextView fech = (TextView) findViewById(R.id.text_fecha);
                         fech.setText(noticia.getFecha());
-                        TextView hor = (TextView) findViewById(R.id.text_hora);
-                        hor.setText(noticia.getHora());
                         TextView det = (TextView) findViewById(R.id.text_descripcion);
                         det.setText(noticia.getDesc2());
 

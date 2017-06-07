@@ -45,7 +45,6 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         public TextView tema;
         public TextView titulo;
         public TextView fecha;
-        public TextView hora;
         public TextView detalles;
 
         public ViewHolder(View itemView){
@@ -54,7 +53,6 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
             tema = (TextView) itemView.findViewById(R.id.tema);
             titulo = (TextView) itemView.findViewById(R.id.titulo);
             fecha = (TextView) itemView.findViewById(R.id.fecha);
-            hora = (TextView) itemView.findViewById(R.id.hora);
             //detalles = (TextView) itemView.findViewById(R.id.descripcion);
         }
     }
@@ -72,7 +70,6 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.ViewHo
         viewHolder.tema.setText(noticia.getTema());
         viewHolder.titulo.setText(noticia.getTitulo());
         viewHolder.fecha.setText(noticia.getFecha());
-        viewHolder.hora.setText(noticia.getHora());
         //viewHolder.detalles.setText(noticia.getDesc2());
 
         Context context = viewHolder.itemView.getContext();

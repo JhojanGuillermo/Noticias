@@ -38,31 +38,19 @@
         android:layout_marginTop="6dp">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clock"/>
+
+        <TextView
             android:id="@+id/text_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_clock"
+            android:layout_marginLeft="20dp"
             android:text="fecha"
             android:textColor="#ff3700"
             android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/separador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_fecha"
-            android:text=" | "
-            android:textColor="#ff3700"
-            android:textSize="16dp" />
-
-        <TextView
-            android:id="@+id/text_hora"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/separador"
-            android:text="hora"
-            android:textColor="#ff3700"
-            android:textSize="16dp" />
     </RelativeLayout>
 
     <TextView
